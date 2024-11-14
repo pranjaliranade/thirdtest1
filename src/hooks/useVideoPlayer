@@ -1,0 +1,24 @@
+import { useState, useEffect } from "react";
+
+const useVideoPlayer = (videoElement) => {
+    const [playerState, setPlayerState] = useState({
+        isPlaying: false,
+        progress: 0,
+        speed: 1,
+        isMuted: false, //initialize properties- play/pause, progress, speed and volume
+      });
+    
+    const togglePlay = () => {
+        setPlayerState({
+          ...playerState,
+          isPlaying: !playerState.isPlaying, //toggle play pause
+        });
+      };
+    
+      return {
+        togglePlay,
+      };
+      
+  };
+  
+  export default useVideoPlayer;
